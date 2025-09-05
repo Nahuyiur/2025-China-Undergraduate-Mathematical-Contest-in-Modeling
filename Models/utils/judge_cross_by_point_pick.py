@@ -120,11 +120,10 @@ def generate_initial_guess_and_judge(missile_point, ball_center, num=1):
         points_pick.append(point)
 
     return True
-    
-    return True  # 如果所有点都满足条件，则返回 True
-def complete_judge(missile_point, ball_center):
-    #if final_cross_judge(missile_position=missile_point,ball_center=ball_center):
-    if generate_initial_guess_and_judge(missile_point=missile_point,ball_center=ball_center,num=10000):
+
+def complete_judge(missile_point, ball_center,num=100):
+    # if final_cross_judge(missile_position=missile_point,ball_center=ball_center):
+    if generate_initial_guess_and_judge(missile_point=missile_point,ball_center=ball_center,num=num):
         return True
         
     return False

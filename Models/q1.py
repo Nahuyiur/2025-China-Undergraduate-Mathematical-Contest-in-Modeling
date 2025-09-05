@@ -5,11 +5,15 @@ import numpy as np
 import math
 # Initial conditions
 drone_initial_position = np.array([17800, 0, 1800])
-flight_speed = 120  # m/s
 missile_initial_position = np.array([20000, 0, 2000])
-drop_time = 1.5  # seconds after mission start
-explosion_delay = 3.6  # seconds after drop
-flight_direction = np.array([0, 0, 1800]) - drone_initial_position  # Direction towards target (0, 0, 0)
+
+flight_speed = 102.41704422 # m/s
+drop_time = 0.00  # seconds after mission start
+explosion_delay = 2.95429147# seconds after drop
+dirx,diry= -0.9994486, 0.03320226308
+
+flight_direction = np.array([dirx,diry,0])
+
 radius = 10
 # Time range
 time_range = np.linspace(0, 50, 50000)
@@ -39,7 +43,7 @@ for t in time_range:
         print(f"At time {t}, the result is: True")
         continue
     # 调用 final_cross_judge 判断是否有交点
-    is_intersecting = complete_judge(missile_position,smoke_position)
+    is_intersecting = complete_judge(missile_position,smoke_position,num=5000)
     
     # 统计结果
     if is_intersecting:
