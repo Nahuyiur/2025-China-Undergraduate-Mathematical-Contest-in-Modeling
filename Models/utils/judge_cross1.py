@@ -6,7 +6,7 @@ r = 10  # 烟雾弹半径
 epsilon = 1e-8  # 精度
 
 
-def generate_initial_guess(num_guesses=5):
+def generate_initial_guess(num_guesses=2000):
     """
     生成多个初始猜测，每个猜测是一个三元组 (f, g, h)，
     其中 f 和 g 满足约束 f^2 + (g - 200)^2 = 49，h 是 [0, 10] 范围内的随机数。
