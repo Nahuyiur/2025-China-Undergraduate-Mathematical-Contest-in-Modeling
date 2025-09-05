@@ -36,7 +36,7 @@ def generate_initial_guess(num_guesses=5):
     return initial_guesses
 
 def calculate_distance(missile_point, ball_center):
-    """计算球心和点之间的距离"""
+    """计算两点之间的距离"""
     x, y, z = missile_point
     a, b, c = ball_center
     d = math.sqrt((x - a)**2 + (y - b)**2 + (z - c)**2)
