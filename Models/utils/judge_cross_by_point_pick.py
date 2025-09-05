@@ -1,6 +1,6 @@
 import math
 import random
-
+from utils.judge_cross1 import final_cross_judge
 r = 10
 
 def calculate_vector(point1, point2):
@@ -26,7 +26,7 @@ def calculate_beta(missile_point, point):
     return beta
 
 def generate_initial_guess(num=2000):
-    """取在圆柱侧面的点"""
+    """取在圆柱侧面的点，但是暂时没用到"""
     points_pick = []
     
     for _ in range(num):
@@ -95,7 +95,7 @@ def cascade_judge(missile_point, ball_center, point):
             return True
     return False
 
-def generate_initial_guess_and_judge(missile_point, ball_center, num=2000):
+def generate_initial_guess_and_judge(missile_point, ball_center, num=1):
     """生成随机点并对每个点进行判断，所有点都满足条件才返回 True，否则返回 False"""
     points_pick = []
     
@@ -118,5 +118,13 @@ def generate_initial_guess_and_judge(missile_point, ball_center, num=2000):
             return False  # 如果有任何一个点不满足条件，立即返回 False
         
         points_pick.append(point)
+
+    return True
     
     return True  # 如果所有点都满足条件，则返回 True
+def complete_judge(missile_point, ball_center):
+    #if final_cross_judge(missile_position=missile_point,ball_center=ball_center):
+    if generate_initial_guess_and_judge(missile_point=missile_point,ball_center=ball_center,num=10000):
+        return True
+        
+    return False

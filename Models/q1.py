@@ -1,6 +1,6 @@
 from utils.motion import calculate_drop_and_explosion_position,calculate_missile_position
-from utils.judge_cross_by_point_pick import generate_initial_guess_and_judge
-from utils.judge_cross1 import 
+from utils.judge_cross_by_point_pick import *
+
 import numpy as np
 import math
 # Initial conditions
@@ -39,7 +39,7 @@ for t in time_range:
         print(f"At time {t}, the result is: True")
         continue
     # 调用 final_cross_judge 判断是否有交点
-    is_intersecting = generate_initial_guess_and_judge(missile_position,smoke_position)
+    is_intersecting = complete_judge(missile_position,smoke_position)
     
     # 统计结果
     if is_intersecting:

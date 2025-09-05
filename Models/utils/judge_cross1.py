@@ -137,15 +137,15 @@ initial_guesses = [
 
 
 def final_cross_judge(missile_position,ball_center):
-    initial_guesses = generate_initial_guess(num_guesses=10)
+    initial_guesses = generate_initial_guess(num_guesses=1)
     # 调用方法判断是否有解
     has_solution, solution = solve_equation(missile_position, ball_center, initial_guesses)
 
     if has_solution:
-        print("方程组有解，解为：", solution)
+        #print("方程组有解，解为：", solution)
         return False
     else:
-        print("方程组无解")# 这个意味着没有相交
+        #print("方程组无解")# 这个意味着没有相交
         return True
     
 # if __name__ == "__main__":
